@@ -13,6 +13,6 @@ export abstract class CommandExecutor<Input>{
     }
     protected abstract prompt():Promise<Input>;
     protected abstract build(input: Input): iCommandExec;
-    protected abstract spawn(command: any): ChildProcessWithoutNullStreams;
+    protected abstract spawn(command: iCommandExec): ChildProcessWithoutNullStreams;
     protected abstract processStream(stream: ChildProcessWithoutNullStreams, logger:IStreamLogger):void;
 }
